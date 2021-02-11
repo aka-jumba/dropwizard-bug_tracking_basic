@@ -1,0 +1,25 @@
+server:
+  type: simple
+  applicationContextPath: /
+  adminContextPath: /admin
+  connector:
+    port: 9900
+    type: http
+  requestLog:
+    appenders:
+      - type: console
+        timeZone: IST
+
+databaseConfiguration:
+  user: ${DB_USER:-root}
+  password: ${DB_PASSWORD:-}
+  url: "jdbc:mysql://${DB_HOST:-localhost}:${DB_PORT:-3306}/user_service?useUnicode=yes&characterEncoding=UTF-8&autoReconnect=true&useSSL=false"
+  acquireIncrement: 5
+  initialPoolSize: 10
+  minPoolSize: 10
+  maxPoolSize: 100
+  maxIdleTime: 1800000
+  maxStatements: 500
+  idleConnectionTestPeriod: 1800000
+  testStatement: "SELECT 1 FROM DUAL"
+  connectionTimeout: 3000
