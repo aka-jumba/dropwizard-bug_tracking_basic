@@ -14,6 +14,7 @@ import javax.ws.rs.core.Response;
 import com.codahale.metrics.annotation.Timed;
 import in.dreamplug.userservice.CreateCheck;
 import in.dreamplug.userservice.UpdateCheck;
+import in.dreamplug.userservice.domain.Bug;
 import in.dreamplug.userservice.domain.User;
 import in.dreamplug.userservice.exception.Error;
 import in.dreamplug.userservice.service.UserService;
@@ -21,10 +22,9 @@ import io.dropwizard.validation.Validated;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-/**
- * @author sidhant.aggarwal
- * @since 12/01/2020
- */
+import java.util.List;
+
+
 @Path ("/v1/users")
 @Slf4j
 @Produces (MediaType.APPLICATION_JSON)
@@ -46,6 +46,12 @@ public class UserResource {
         user.setExternalId(userId);
         final User updatedUser = userService.update(user);
         return Response.status(Response.Status.CREATED).entity(updatedUser).build();
+    }
+
+    @GET
+    @Path ("/bugs/{userId}")
+    public List<Bug> getAllBugs(@PathParam ("userId") final String userId) {
+        return userService.listAllBugs(userId);
     }
 
     @GET

@@ -4,10 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.xml.ws.WebServiceException;
 
-/**
- * @author sidhant.aggarwal
- * @since 12/01/2020
- */
+
 public class AppException extends WebServiceException {
     private String errorCode;
     private Integer statusCode;

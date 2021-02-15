@@ -4,10 +4,6 @@ import java.sql.Timestamp;
 import java.util.UUID;
 import com.google.common.base.Strings;
 
-/**
- * @author sidhant.aggarwal
- * @since 12/01/2020
- */
 public class ExternalBase extends Base {
     private String externalId;
 

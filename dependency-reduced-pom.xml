@@ -50,9 +50,39 @@
   </build>
   <dependencies>
     <dependency>
+      <groupId>org.jdbi</groupId>
+      <artifactId>jdbi3-core</artifactId>
+      <version>3.0.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.4</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.ws.rs</groupId>
+      <artifactId>jakarta.ws.rs-api</artifactId>
+      <version>2.1.6</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.dropwizard.metrics</groupId>
+      <artifactId>metrics-annotation</artifactId>
+      <version>4.1.2</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
       <groupId>io.dropwizard</groupId>
-      <artifactId>dropwizard-configuration</artifactId>
+      <artifactId>dropwizard-validation</artifactId>
       <version>2.0.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.zaxxer</groupId>
+      <artifactId>HikariCP</artifactId>
+      <version>3.4.2</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -65,18 +95,6 @@
       <groupId>org.jdbi</groupId>
       <artifactId>jdbi3-sqlobject</artifactId>
       <version>3.0.1</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>RELEASE</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.zaxxer</groupId>
-      <artifactId>HikariCP</artifactId>
-      <version>3.4.2</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>

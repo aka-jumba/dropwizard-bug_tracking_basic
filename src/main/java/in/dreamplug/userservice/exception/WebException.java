@@ -1,9 +1,6 @@
 package in.dreamplug.userservice.exception;
 
-/**
- * @author sidhant.aggarwal
- * @since 12/01/2020
- */
+
 public class WebException extends RuntimeException {
     public WebException(String message) {
         super(message);

@@ -8,10 +8,7 @@ import javax.ws.rs.ext.ExceptionMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @author sidhant.aggarwal
- * @since 12/01/2020
- */
+
 public class AppExceptionMapper implements ExceptionMapper<AppException> {
     private static final Logger log = LoggerFactory.getLogger(AppExceptionMapper.class);
 

@@ -6,8 +6,8 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor (access = AccessLevel.PRIVATE)
-public enum Error {
-    user_not_found(AppException.builder().message("User not found.").header("User not found").statusCode(404));
+public enum BugError {
+    bug_not_found(AppException.builder().message("Bug not found.").header("Bug not found").statusCode(404));
 
     private AppException.AppExceptionBuilder builder;
 

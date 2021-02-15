@@ -1,9 +1,5 @@
 package in.dreamplug.userservice.configuration;
 
-/**
- * @author sidhant.aggarwal
- * @since 12/01/2020
- */
 public class DatabaseConfiguration {
     private String driverClass;
     private String user;

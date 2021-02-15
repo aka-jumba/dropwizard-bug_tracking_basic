@@ -12,7 +12,7 @@ server:
 
 databaseConfiguration:
   user: ${DB_USER:-root}
-  password: ${DB_PASSWORD:-}
+  password: ${DB_PASSWORD:-root}
   url: "jdbc:mysql://${DB_HOST:-localhost}:${DB_PORT:-3306}/user_service?useUnicode=yes&characterEncoding=UTF-8&autoReconnect=true&useSSL=false"
   acquireIncrement: 5
   initialPoolSize: 10

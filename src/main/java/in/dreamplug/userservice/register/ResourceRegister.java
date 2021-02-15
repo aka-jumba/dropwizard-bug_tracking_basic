@@ -1,5 +1,7 @@
 package in.dreamplug.userservice.register;
 
+import in.dreamplug.userservice.resource.BugResource;
+import in.dreamplug.userservice.service.BugService1;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 import com.google.common.base.Strings;
@@ -13,10 +15,6 @@ import in.dreamplug.userservice.service.UserService;
 import io.dropwizard.setup.Environment;
 import lombok.AllArgsConstructor;
 
-/**
- * @author sidhant.aggarwal
- * @since 12/01/2020
- */
 @AllArgsConstructor
 public class ResourceRegister {
     public void register(final Environment environment, final UserServiceConfiguration configuration) {
@@ -24,7 +22,9 @@ public class ResourceRegister {
         final Jdbi jdbi = Jdbi.create(dataSource);
         jdbi.installPlugin(new SqlObjectPlugin());
         final UserService userService = new UserService(jdbi);
+        final BugService1 bugService = new BugService1(jdbi);
         environment.jersey().register(new UserResource(userService));
+        environment.jersey().register(new BugResource(bugService, userService));
         environment.jersey().register(AppExceptionMapper.class);
         environment.healthChecks().register("MYSQL", new DatabaseHealthCheck(dataSource));
     }

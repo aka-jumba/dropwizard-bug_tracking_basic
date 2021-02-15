@@ -6,10 +6,6 @@ import com.codahale.metrics.health.HealthCheck;
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.AllArgsConstructor;
 
-/**
- * @author sidhant.aggarwal
- * @since 12/01/2020
- */
 @AllArgsConstructor
 public class DatabaseHealthCheck extends HealthCheck {
     private HikariDataSource dataSource;
